@@ -1,0 +1,10 @@
+# Render — free deploy
+# After pushing to GitHub, go to Render → "New +" → "Web Service",
+# pick this repo, and Render deploys it with Docker using this file.
+# No build or start command needs to be typed — this is enough.
+services:
+  - type: web
+    name: video-downloader
+    env: docker
+    dockerfilePath: ./Dockerfile
+    plan: free
