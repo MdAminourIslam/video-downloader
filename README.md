@@ -15,7 +15,7 @@
 Paste a link → see the preview → pick a quality → download. That's it.
 
 **🌐 Live demo:** `https://video-downloader.onrender.com`
-*(replace with your own URL after deploying — see [Deploy for free](#-deploy-for-free--render))*
+*see [video-downloader](https://video-downloader-36ym.onrender.com/))*
 
 </div>
 
