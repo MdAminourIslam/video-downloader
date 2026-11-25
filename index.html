@@ -32,8 +32,6 @@
     --ok-soft:#eaf7ee;
     --warn:#92400e;
     --warn-soft:#fef6e0;
-    --code-bg:#131418;
-    --code-ink:#e9eaee;
     --radius:6px;
     --radius-sm:4px;
     --shadow:0 1px 2px rgba(34,29,20,.06),0 10px 28px -18px rgba(34,29,20,.35);
@@ -370,40 +368,6 @@
   }
   .toast.show{opacity:1;transform:translateX(-50%) translateY(0)}
 
-  /* ---------- README page ---------- */
-  .readme-head{text-align:center;padding:2px 0}
-  .readme-head .brand-mark{width:56px;height:56px;margin:0 auto 10px}
-  .readme-head .brand-mark svg{width:56px;height:56px}
-  .readme-head h2{font-size:27px;margin:0 0 6px}
-  .readme-head .tagline{color:var(--ink-2);font-size:15.5px;margin:0 auto;max-width:56ch}
-  .badge-row{display:flex;gap:7px;flex-wrap:wrap;justify-content:center;margin-top:14px}
-  .badge{
-    font-size:12px;font-weight:600;letter-spacing:.03em;
-    border:1px solid var(--line);border-radius:3px;padding:4px 10px;
-    background:var(--bg);color:var(--ink-2);white-space:nowrap;
-  }
-  .badge b{color:var(--accent);font-weight:700}
-  .readme-actions{display:flex;gap:9px;flex-wrap:wrap;justify-content:center;margin-top:18px}
-  .readme-actions .btn{min-height:2.9rem;font-size:15px}
-  .readme-note{font-size:13px;color:var(--ink-3);text-align:center;margin:12px 0 0}
-  .feat-grid{display:grid;grid-template-columns:1fr 1fr;gap:9px}
-  .feat{background:var(--bg);border:1px solid var(--line);border-radius:5px;padding:13px 14px}
-  .feat h3{margin:0 0 3px;font-size:15.5px;font-family:var(--serif)}
-  .feat p{margin:0;font-size:13.5px;color:var(--ink-2)}
-  .code-block{
-    background:var(--code-bg);color:var(--code-ink);border-radius:6px;
-    padding:15px 16px;font-family:"JetBrains Mono",monospace;font-size:12.8px;
-    line-height:1.65;overflow-x:auto;white-space:pre;margin:0;
-  }
-  .readme-sec{margin-top:22px}
-  .readme-sec:first-child{margin-top:0}
-  .readme-sec>h3{font-family:var(--serif);font-size:18.5px;margin:0 0 8px;padding-bottom:6px;border-bottom:1px solid var(--line)}
-  .readme-sec>p{font-size:14.5px;color:var(--ink-2);margin:0 0 10px}
-  .stack-row{display:flex;gap:7px;flex-wrap:wrap}
-  @media (max-width:640px){
-    .feat-grid{grid-template-columns:1fr}
-    .readme-actions .btn{flex:1 1 100%}
-  }
 
   /* ---------- Mobile ---------- */
   @media (max-width:640px){
@@ -447,7 +411,6 @@
     <nav class="page-nav" id="page-nav" aria-label="পেজ বেছে নিন" data-i18n-aria="nav_aria">
       <button type="button" class="nav-btn active" id="nav-home" data-i18n="nav_home">ডাউনলোডার</button>
       <button type="button" class="nav-btn" id="nav-guide" data-i18n="nav_guide">কীভাবে ডাউনলোড করবেন</button>
-      <button type="button" class="nav-btn" id="nav-readme" data-i18n="nav_readme">README</button>
     </nav>
   </div>
 
@@ -623,233 +586,12 @@
     </section>
   </main>
 
-  <!-- ================= README PAGE ================= -->
-  <main id="page-readme" class="page">
-    <button class="back-btn" type="button" data-goto="home" data-i18n="guide_back">← ডাউনলোডার</button>
-
-    <section class="card" aria-labelledby="readme-h">
-      <div class="readme-head">
-        <span class="brand-mark" aria-hidden="true"><svg viewBox="0 0 48 48" role="img" aria-label="Video Downloader logo"><path d="M24 2.5 41 8v16c0 10.2-6.9 17.6-17 21.5C13.9 41.6 7 34.2 7 24V8Z" fill="#9c2222" stroke="#a07d2c" stroke-width="2"/><path d="M24 6.3 37.5 10.7V24c0 8.4-5.5 14.6-13.5 17.9C16 38.6 10.5 32.4 10.5 24V10.7Z" fill="none" stroke="#f3d98b" stroke-width="1" opacity=".65"/><polygon points="19.5,15.5 33,24 19.5,32.5" fill="#fff"/><rect x="17.5" y="35.4" width="13" height="2.6" fill="#e9c766"/></svg></span>
-        <h2 id="readme-h">Video Downloader</h2>
-        <p class="tagline" data-i18n="rm_tagline">YouTube ও Facebook ভিডিও ডাউনলোডার — MP4 ভিডিও (1080p / 720p / 480p / 360p) আর MP3 অডিও (320 / 128 kbps), ডার্ক মোড আর বাংলা / English ভাষাসহ।</p>
-        <div class="badge-row" aria-hidden="true">
-          <span class="badge">Platform · <b>YouTube + Facebook</b></span>
-          <span class="badge">Video · <b>MP4</b></span>
-          <span class="badge">Audio · <b>MP3</b></span>
-          <span class="badge">Server · <b>Python + FastAPI</b></span>
-          <span class="badge">Engine · <b>yt-dlp</b></span>
-        </div>
-        <div class="ornament" aria-hidden="true"><span class="rule"></span><span class="diamond"></span><span class="rule"></span></div>
-        <div class="readme-actions">
-          <button class="btn btn-accent" type="button" id="readme-copy-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15H4a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2h9a2 2 0 0 1 2 2v1"/></svg>
-            <span data-i18n="rm_copy">README.md কপি করুন</span>
-          </button>
-          <button class="btn btn-ghost" type="button" id="readme-dl-btn">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
-            <span data-i18n="rm_download">README.md ডাউনলোড করুন</span>
-          </button>
-        </div>
-        <p class="readme-note" data-i18n="rm_note">GitHub রিপোতে এই Markdown-টাই README.md হিসেবে বসান — নিচে পুরো README-টা সুন্দর করে সাজিয়ে দেখানো হয়েছে।</p>
-      </div>
-    </section>
-
-    <section class="card" aria-labelledby="readme-feat-h">
-      <div class="card-head">
-        <span class="ic green" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/></svg></span>
-        <div>
-          <h2 id="readme-feat-h" data-i18n="rm_feat_h">ফিচারসমূহ</h2>
-          <p class="sub" data-i18n="rm_feat_sub">এই প্রজেক্টে যা যা আছে</p>
-        </div>
-      </div>
-      <div class="feat-grid">
-        <div class="feat"><h3 data-i18n="f1_h">দুটি প্ল্যাটফর্ম</h3><p data-i18n="f1_p">YouTube ও Facebook লিংক নিজে চিনে নেয় — watch, Shorts, youtu.be, fb.watch আর Reel।</p></div>
-        <div class="feat"><h3 data-i18n="f2_h">আসল প্রিভিউ</h3><p data-i18n="f2_p">YouTube থাম্বনেইল আর Facebook-এর অফিসিয়াল ভিডিও প্লাগইন; vertical Reel-এর কভার কাটা ছাড়া পুরোটা দেখায়।</p></div>
-        <div class="feat"><h3 data-i18n="f3_h">MP4 ভিডিও</h3><p data-i18n="f3_p">1080p · 720p · 480p · 360p — পছন্দের কোয়ালিটি বেছে নিন।</p></div>
-        <div class="feat"><h3 data-i18n="f4_h">MP3 অডিও</h3><p data-i18n="f4_p">শুধু অডিও — 320 kbps (সেরা) বা 128 kbps (ছোট সাইজ)।</p></div>
-        <div class="feat"><h3 data-i18n="f5_h">লাইভ প্রগ্রেস</h3><p data-i18n="f5_p">% দিয়ে বড় করে দেখায় কতটুকু নামলো, MB সহ; ১০০% হলে সবুজ “ডাউনলোড সম্পূর্ণ”।</p></div>
-        <div class="feat"><h3 data-i18n="f6_h">ডিজাইন ও ভাষা</h3><p data-i18n="f6_p">Classical ivory–লাল–সোনালি ডিজাইন, ডার্ক মোড, বাংলা / English সুইচ, ফোনে ৩-লাইন মেনু।</p></div>
-      </div>
-    </section>
-
-    <section class="card" aria-labelledby="readme-dev-h">
-      <div class="card-head">
-        <span class="ic blue" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="16 18 22 12 16 6"/><polyline points="8 6 2 12 8 18"/></svg></span>
-        <div>
-          <h2 id="readme-dev-h" data-i18n="rm_dev_h">ডেভেলপারদের জন্য</h2>
-          <p class="sub" data-i18n="rm_dev_sub">নিজের কম্পিউটারে চালানো, GitHub-এ পুশ আর ফ্রি deploy</p>
-        </div>
-      </div>
-
-      <div class="readme-sec">
-        <h3 data-i18n="rm_run_h">নিজের কম্পিউটারে চালান</h3>
-        <p data-i18n="rm_run_p">আসল ডাউনলোডের জন্য Python সার্ভারটা লাগে (ব্রাউজার একা YouTube/Facebook থেকে নামাতে পারে না)। Python 3.12+ আর ffmpeg ইনস্টল করে চালান:</p>
-        <pre class="code-block">pip install -r requirements.txt
-python server.py
-# Then open http://localhost:8000</pre>
-      </div>
-
-      <div class="readme-sec">
-        <h3 data-i18n="rm_deploy_h">Render-এ ফ্রি deploy</h3>
-        <div class="g-list">
-          <div class="g-item">
-            <div class="n" data-i18n="n1">১</div>
-            <div><p data-i18n-html="d1_p">প্রজেক্টটা GitHub-এ পুশ করুন — রিপোর নাম: <strong>video-downloader</strong>।</p></div>
-          </div>
-          <div class="g-item">
-            <div class="n" data-i18n="n2">২</div>
-            <div><p data-i18n-html="d2_p">render.com-এ GitHub দিয়ে সাইন আপ করে <strong>New + → Web Service</strong> থেকে রিপোটা Connect করুন।</p></div>
-          </div>
-          <div class="g-item">
-            <div class="n" data-i18n="n3">৩</div>
-            <div><p data-i18n-html="d3_p"><strong>render.yaml</strong> আর <strong>Dockerfile</strong> নিজে থেকেই পড়ে নেবে — Region: <strong>Singapore</strong>, Plan: <strong>Free</strong> বেছে Create করুন।</p></div>
-          </div>
-          <div class="g-item">
-            <div class="n" data-i18n="n4">৪</div>
-            <div><p data-i18n-html="d4_p">৩–৫ মিনিটে লাইভ লিংক পাবেন — যেমন <strong>video-downloader.onrender.com</strong>। ফ্রি প্ল্যানে ১৫ মিনিট কেউ না খুললে সার্ভার ঘুমিয়ে যায়; প্রথমবার খুলতে ৩০–৫০ সেকেন্ড লাগতে পারে।</p></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="readme-sec">
-        <h3 data-i18n="rm_struct_h">প্রজেক্টের ফাইল</h3>
-        <pre class="code-block">video-downloader/
-├── index.html        # Web app (this page)
-├── server.py         # FastAPI + yt-dlp server
-├── requirements.txt  # Python dependencies
-├── Dockerfile        # Python 3.12 + ffmpeg
-├── render.yaml       # Render free deploy
-├── .gitignore
-├── run.bat           # Windows launcher
-├── run.sh            # macOS / Linux launcher
-└── README.md         # This README</pre>
-      </div>
-
-      <div class="readme-sec">
-        <h3 data-i18n="rm_stack_h">টেক স্ট্যাক</h3>
-        <div class="stack-row" aria-hidden="true">
-          <span class="badge">HTML · CSS · JavaScript</span>
-          <span class="badge">Python · FastAPI</span>
-          <span class="badge">yt-dlp</span>
-          <span class="badge">ffmpeg</span>
-          <span class="badge">Docker · Render</span>
-        </div>
-      </div>
-    </section>
-  </main>
 
   <p class="foot" data-i18n="foot">শুধু নিজের বা অনুমতি থাকা ভিডিও ডাউনলোড করুন। Facebook-এর ক্ষেত্রে শুধু পাবলিক ভিডিও নামবে।</p>
 </div>
 
 <div class="toast" id="toast" role="status"></div>
 
-<!-- The README.md source below is plain text: the README page reads it
-     when the visitor copies or downloads the Markdown file. -->
-<script type="text/plain" id="readme-md-source">
-<div align="center">
-
-# Video Downloader
-
-**Download YouTube & Facebook videos as MP4 or MP3 — fast, free and beautifully simple.**
-
-[![Platform](https://img.shields.io/badge/Platform-YouTube%20%7C%20Facebook-cf1f14)](#)
-[![Video](https://img.shields.io/badge/Video-MP4%201080p%20%C2%B7%20720p%20%C2%B7%20480p%20%C2%B7%20360p-9c2222)](#)
-[![Audio](https://img.shields.io/badge/Audio-MP3%20320%20%C2%B7%20128%20kbps-15803d)](#)
-[![Python](https://img.shields.io/badge/Python-3.12-3776AB?logo=python&logoColor=white)](#)
-[![FastAPI](https://img.shields.io/badge/Server-FastAPI-009688?logo=fastapi&logoColor=white)](#)
-[![Deploy](https://img.shields.io/badge/Deploy-Render%20Free-46E3B7?logo=render&logoColor=black)](#)
-
-[Features](#features) · [How to use](#how-to-use) · [Quick start](#quick-start-local) · [Deploy free](#deploy-free-on-render) · [Project structure](#project-structure)
-
-</div>
-
----
-
-## Features
-
-- **Two platforms, one box** — paste a link and the app detects YouTube or Facebook automatically (watch, Shorts, `youtu.be`, `fb.watch`, watch and Reel links).
-- **Real previews** — YouTube thumbnails, plus Facebook's official video plugin for public videos. Vertical Reel covers are shown in full, never cropped.
-- **MP4 video** in **1080p / 720p / 480p / 360p** — if a quality is missing, the closest available one is used.
-- **MP3 audio only** in **320 kbps** (best) or **128 kbps** (small size).
-- **Live download progress** — a big % counter, a progress bar and MB downloaded / total, ending with a green **Download complete**.
-- **Classical design** — ivory, deep red and gold, with a shield logo and serif headings.
-- **Dark mode** that follows your system setting, with a manual toggle.
-- **Bangla / English** — the whole interface switches language with one tap.
-- **Mobile friendly** — responsive layout with a 3-line (hamburger) menu on phones.
-
-## Supported formats
-
-| Type | Options | Notes |
-| ---- | ------- | ----- |
-| MP4 video | 1080p · 720p · 480p · 360p | 720p is the best balance of quality and size |
-| MP3 audio | 320 kbps · 128 kbps | Audio only, no video |
-
-## How to use
-
-1. **Copy the link** — open the video on YouTube or Facebook, tap **Share → Copy link**.
-2. **Paste & fetch** — paste the link into the box and tap **Fetch video**. The platform is detected and a preview appears.
-3. **Pick a quality & download** — choose MP4 or MP3, tap **Download**, and watch the % progress. At 100% the file is saved to your device's **Downloads**.
-
-> Facebook downloads work for **public videos only**.
-
-## Quick start (local)
-
-Real downloads need the small Python server in this repo — a browser alone cannot download from YouTube or Facebook.
-
-**Requirements:** Python 3.12+ and [ffmpeg](https://ffmpeg.org/download.html) on your PATH.
-
-```bash
-pip install -r requirements.txt
-python server.py
-```
-
-Then open **http://localhost:8000** in your browser. Health check: `GET /health` returns `{"ok": true}`.
-
-On Windows you can also double-click `run.bat`; on macOS / Linux run `./run.sh`.
-
-## Deploy free on Render
-
-1. Push this project to GitHub — repo name: **`video-downloader`**.
-2. Sign up at [render.com](https://render.com) with GitHub, then **New + → Web Service** and connect the repo.
-3. Render reads `render.yaml` and the `Dockerfile` automatically — choose **Region: Singapore** and the **Free** plan, then create the service.
-4. In 3–5 minutes your app is live, e.g. `https://video-downloader.onrender.com`.
-
-> Free-plan note: the server sleeps after 15 idle minutes, so the first open afterwards can take 30–50 seconds. That is Render's free-tier behaviour, not a bug.
-
-## Project structure
-
-```
-video-downloader/
-├── index.html        # Web app (single-file frontend)
-├── server.py         # FastAPI + yt-dlp download server
-├── requirements.txt  # Python dependencies
-├── Dockerfile        # Python 3.12 + ffmpeg image
-├── render.yaml       # Render free-deploy config
-├── .gitignore
-├── run.bat           # Windows launcher
-├── run.sh            # macOS / Linux launcher
-└── README.md
-```
-
-## Tech stack
-
-| Layer | Technology |
-| ----- | ---------- |
-| Frontend | HTML · CSS · JavaScript (single file, no build step) |
-| Server | Python · FastAPI |
-| Download engine | yt-dlp + ffmpeg |
-| Hosting | Docker · Render (free plan) |
-
-## Please note
-
-Download only your own videos, or videos you have permission to download. Respect each platform's terms and the creator's rights.
-
-<div align="center">
-
-*Paste a link. Pick a quality. Done.*
-
-</div>
-</script>
 
 <script>
 (function(){
@@ -868,7 +610,6 @@ Download only your own videos, or videos you have permission to download. Respec
       nav_aria: "পেজ বেছে নিন",
       nav_home: "ডাউনলোডার",
       nav_guide: "কীভাবে ডাউনলোড করবেন",
-      nav_readme: "README",
       hero_title: '<span class="r">YouTube</span> ও <span class="b">Facebook</span> ভিডিও ডাউনলোড',
       hero_p: 'লিংক পেস্ট করুন, কোয়ালিটি বেছে নিন — ভিডিও নামবে <strong>MP4</strong>-তে, অডিও নামবে <strong>MP3</strong>-তে।',
       dl_h: "ভিডিওর লিংক দিন",
@@ -903,7 +644,6 @@ Download only your own videos, or videos you have permission to download. Respec
       foot: "শুধু নিজের বা অনুমতি থাকা ভিডিও ডাউনলোড করুন। Facebook-এর ক্ষেত্রে শুধু পাবলিক ভিডিও নামবে।",
       theme_to_dark: "ডার্ক মোড",
       theme_to_light: "লাইট মোড",
-      toast_copy_fail: "কপি হয়নি — নিজে সিলেক্ট করে নিন",
       toast_pasted: "লিংক পেস্ট হয়েছে",
       toast_clip_empty: "ক্লিপবোর্ড খালি",
       toast_paste_manual: "বাক্সে চেপে ধরে Paste করুন",
@@ -928,45 +668,13 @@ Download only your own videos, or videos you have permission to download. Respec
       server_fail_default: "সার্ভার ফাইল তৈরি করতে পারেনি",
       status_server_down: "<p><strong>ডাউনলোড সার্ভার পাওয়া যাচ্ছে না।</strong> কিছুক্ষণ অপেক্ষা করে আবার চেষ্টা করুন।</p>",
       status_done: "<p><strong>ডাউনলোড সম্পূর্ণ ✓</strong> — {label}। ফাইলটি আপনার ডিভাইসের Downloads-এ সেভ হয়েছে।</p>",
-      status_fail: "<p><strong>ডাউনলোড হয়নি।</strong> {msg}</p><p>লিংকটা ঠিক আছে কিনা দেখে আবার চেষ্টা করুন।</p>",
-      rm_tagline: "YouTube ও Facebook ভিডিও ডাউনলোডার — MP4 ভিডিও (1080p / 720p / 480p / 360p) আর MP3 অডিও (320 / 128 kbps), ডার্ক মোড আর বাংলা / English ভাষাসহ।",
-      rm_copy: "README.md কপি করুন",
-      rm_download: "README.md ডাউনলোড করুন",
-      rm_note: "GitHub রিপোতে এই Markdown-টাই README.md হিসেবে বসান — নিচে পুরো README-টা সুন্দর করে সাজিয়ে দেখানো হয়েছে।",
-      rm_feat_h: "ফিচারসমূহ",
-      rm_feat_sub: "এই প্রজেক্টে যা যা আছে",
-      f1_h: "দুটি প্ল্যাটফর্ম",
-      f1_p: "YouTube ও Facebook লিংক নিজে চিনে নেয় — watch, Shorts, youtu.be, fb.watch আর Reel।",
-      f2_h: "আসল প্রিভিউ",
-      f2_p: "YouTube থাম্বনেইল আর Facebook-এর অফিসিয়াল ভিডিও প্লাগইন; vertical Reel-এর কভার কাটা ছাড়া পুরোটা দেখায়।",
-      f3_h: "MP4 ভিডিও",
-      f3_p: "1080p · 720p · 480p · 360p — পছন্দের কোয়ালিটি বেছে নিন।",
-      f4_h: "MP3 অডিও",
-      f4_p: "শুধু অডিও — 320 kbps (সেরা) বা 128 kbps (ছোট সাইজ)।",
-      f5_h: "লাইভ প্রগ্রেস",
-      f5_p: "% দিয়ে বড় করে দেখায় কতটুকু নামলো, MB সহ; ১০০% হলে সবুজ “ডাউনলোড সম্পূর্ণ”।",
-      f6_h: "ডিজাইন ও ভাষা",
-      f6_p: "Classical ivory–লাল–সোনালি ডিজাইন, ডার্ক মোড, বাংলা / English সুইচ, ফোনে ৩-লাইন মেনু।",
-      rm_dev_h: "ডেভেলপারদের জন্য",
-      rm_dev_sub: "নিজের কম্পিউটারে চালানো, GitHub-এ পুশ আর ফ্রি deploy",
-      rm_run_h: "নিজের কম্পিউটারে চালান",
-      rm_run_p: "আসল ডাউনলোডের জন্য Python সার্ভারটা লাগে (ব্রাউজার একা YouTube/Facebook থেকে নামাতে পারে না)। Python 3.12+ আর ffmpeg ইনস্টল করে চালান:",
-      rm_deploy_h: "Render-এ ফ্রি deploy",
-      d1_p: "প্রজেক্টটা GitHub-এ পুশ করুন — রিপোর নাম: <strong>video-downloader</strong>।",
-      d2_p: "render.com-এ GitHub দিয়ে সাইন আপ করে <strong>New + → Web Service</strong> থেকে রিপোটা Connect করুন।",
-      d3_p: "<strong>render.yaml</strong> আর <strong>Dockerfile</strong> নিজে থেকেই পড়ে নেবে — Region: <strong>Singapore</strong>, Plan: <strong>Free</strong> বেছে Create করুন।",
-      d4_p: "৩–৫ মিনিটে লাইভ লিংক পাবেন — যেমন <strong>video-downloader.onrender.com</strong>। ফ্রি প্ল্যানে ১৫ মিনিট কেউ না খুললে সার্ভার ঘুমিয়ে যায়; প্রথমবার খুলতে ৩০–৫০ সেকেন্ড লাগতে পারে।",
-      rm_struct_h: "প্রজেক্টের ফাইল",
-      rm_stack_h: "টেক স্ট্যাক",
-      toast_readme_copied: "README.md কপি হয়েছে ✓",
-      toast_readme_dl: "README.md ডাউনলোড শুরু হয়েছে"
+      status_fail: "<p><strong>ডাউনলোড হয়নি।</strong> {msg}</p><p>লিংকটা ঠিক আছে কিনা দেখে আবার চেষ্টা করুন।</p>"
     },
     en: {
       doc_title: "Video Downloader — YouTube & Facebook",
       nav_aria: "Choose a page",
       nav_home: "Downloader",
       nav_guide: "How to download",
-      nav_readme: "README",
       hero_title: 'Download <span class="r">YouTube</span> &amp; <span class="b">Facebook</span> Videos',
       hero_p: 'Paste a link and pick a quality — videos download as <strong>MP4</strong>, audio as <strong>MP3</strong>.',
       dl_h: "Paste the video link",
@@ -1001,7 +709,6 @@ Download only your own videos, or videos you have permission to download. Respec
       foot: "Download only your own videos or ones you have permission for. On Facebook, only public videos can be downloaded.",
       theme_to_dark: "Dark mode",
       theme_to_light: "Light mode",
-      toast_copy_fail: "Copy failed — please select it manually",
       toast_pasted: "Link pasted",
       toast_clip_empty: "Clipboard is empty",
       toast_paste_manual: "Press and hold in the box, then tap Paste",
@@ -1026,38 +733,7 @@ Download only your own videos, or videos you have permission to download. Respec
       server_fail_default: "The server could not prepare the file",
       status_server_down: "<p><strong>Download server not found.</strong> Please wait a moment and try again.</p>",
       status_done: "<p><strong>Download complete ✓</strong> — {label}. The file has been saved to your device's Downloads.</p>",
-      status_fail: "<p><strong>Download failed.</strong> {msg}</p><p>Check the link and try again.</p>",
-      rm_tagline: "Download YouTube & Facebook videos as MP4 (1080p / 720p / 480p / 360p) or MP3 (320 / 128 kbps) — with dark mode and Bangla / English language support.",
-      rm_copy: "Copy README.md",
-      rm_download: "Download README.md",
-      rm_note: "Use this Markdown as the README.md of your GitHub repo — the full README is laid out beautifully below.",
-      rm_feat_h: "Features",
-      rm_feat_sub: "Everything this project includes",
-      f1_h: "Two platforms",
-      f1_p: "Auto-detects YouTube & Facebook links — watch, Shorts, youtu.be, fb.watch and Reels.",
-      f2_h: "Real previews",
-      f2_p: "YouTube thumbnails and Facebook's official video plugin; vertical Reel covers are shown in full, never cropped.",
-      f3_h: "MP4 video",
-      f3_p: "1080p · 720p · 480p · 360p — pick the quality you want.",
-      f4_h: "MP3 audio",
-      f4_p: "Audio only — 320 kbps (best) or 128 kbps (small size).",
-      f5_h: "Live progress",
-      f5_p: "A big % counter with MB downloaded / total; a green “Download complete” at 100%.",
-      f6_h: "Design & languages",
-      f6_p: "Classical ivory, red & gold design, dark mode, a Bangla / English switch and a 3-line phone menu.",
-      rm_dev_h: "For developers",
-      rm_dev_sub: "Run it locally, push to GitHub and deploy for free",
-      rm_run_h: "Run locally",
-      rm_run_p: "Real downloads need the Python server (a browser alone cannot download from YouTube/Facebook). Install Python 3.12+ and ffmpeg, then run:",
-      rm_deploy_h: "Deploy free on Render",
-      d1_p: "Push the project to GitHub — repo name: <strong>video-downloader</strong>.",
-      d2_p: "Sign up on render.com with GitHub, then choose <strong>New + → Web Service</strong> and connect the repo.",
-      d3_p: "It reads <strong>render.yaml</strong> and the <strong>Dockerfile</strong> automatically — pick Region: <strong>Singapore</strong>, Plan: <strong>Free</strong>, and create the service.",
-      d4_p: "Your live link is ready in 3–5 minutes — e.g. <strong>video-downloader.onrender.com</strong>. On the free plan the server sleeps after 15 idle minutes, so the first open can take 30–50 seconds.",
-      rm_struct_h: "Project structure",
-      rm_stack_h: "Tech stack",
-      toast_readme_copied: "README.md copied ✓",
-      toast_readme_dl: "README.md download started"
+      status_fail: "<p><strong>Download failed.</strong> {msg}</p><p>Check the link and try again.</p>"
     }
   };
   function t(key){ return I18N[state.lang][key] || I18N.bn[key] || key; }
@@ -1114,12 +790,6 @@ Download only your own videos, or videos you have permission to download. Respec
     toastEl.classList.add("show");
     clearTimeout(toastTimer);
     toastTimer = setTimeout(function(){ toastEl.classList.remove("show"); }, 2600);
-  }
-  function copyText(txt, okMsg){
-    if(navigator.clipboard && navigator.clipboard.writeText){
-      navigator.clipboard.writeText(txt).then(function(){ toast(okMsg); })
-      .catch(function(){ toast(t("toast_copy_fail")); });
-    } else toast(t("toast_copy_fail"));
   }
   /* ---------- Platform detect ---------- */
   function parseUrl(raw){
@@ -1474,44 +1144,23 @@ Download only your own videos, or videos you have permission to download. Respec
     menuBtn.setAttribute("aria-expanded", open ? "true" : "false");
   });
 
-  /* ---------- Pages (downloader / guide / README) ---------- */
+  /* ---------- Pages (downloader / guide) ---------- */
   function showPage(name){
     closeMenu();
-    var home = name === "home", guide = name === "guide", readme = name === "readme";
+    var home = name === "home", guide = name === "guide";
     $("page-home").classList.toggle("active", home);
     $("page-guide").classList.toggle("active", guide);
-    $("page-readme").classList.toggle("active", readme);
     $("nav-home").classList.toggle("active", home);
     $("nav-guide").classList.toggle("active", guide);
-    $("nav-readme").classList.toggle("active", readme);
     window.scrollTo({ top: 0, behavior: "smooth" });
   }
   $("nav-home").addEventListener("click", function(){ showPage("home"); });
   $("nav-guide").addEventListener("click", function(){ showPage("guide"); });
-  $("nav-readme").addEventListener("click", function(){ showPage("readme"); });
   document.querySelectorAll("[data-goto]").forEach(function(b){
     b.addEventListener("click", function(){ showPage(b.getAttribute("data-goto")); });
   });
   if(location.hash === "#guide") showPage("guide");
-  else if(location.hash === "#readme") showPage("readme");
 
-  /* ---------- README (copy / download the Markdown) ---------- */
-  function readmeMarkdown(){
-    var el = $("readme-md-source");
-    return el ? el.textContent.replace(/^\s*\n/, "").replace(/\s+$/, "") + "\n" : "";
-  }
-  $("readme-copy-btn").addEventListener("click", function(){
-    copyText(readmeMarkdown(), t("toast_readme_copied"));
-  });
-  $("readme-dl-btn").addEventListener("click", function(){
-    var blob = new Blob([readmeMarkdown()], { type: "text/markdown;charset=utf-8" });
-    var u = URL.createObjectURL(blob);
-    var a = document.createElement("a");
-    a.href = u; a.download = "README.md";
-    document.body.appendChild(a); a.click(); a.remove();
-    setTimeout(function(){ URL.revokeObjectURL(u); }, 4000);
-    toast(t("toast_readme_dl"));
-  });
   refreshThemeLabel();
 })();
 </script>
